@@ -20,6 +20,7 @@ try {
 
 // ── Express app setup ────────────────────────────────────────────────────────
 const app = express();
+app.set('trust proxy', 1); // Render (and most cloud platforms) sit behind a reverse proxy
 
 // Global JSON middleware — explicitly excluded from webhook route which uses express.raw()
 app.use((req, res, next) => {
